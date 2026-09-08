@@ -1,3 +1,4 @@
+```tsx
 "use client";
 
 import { useState } from "react";
@@ -10,17 +11,37 @@ import { SocialButtons } from "../../../components/auth/SocialButtons";
 export default function LoginPage() {
   const [mode, setMode] = useState<"signin" | "signup">("signin");
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <div className="min-h-screen bg-[#F4EEE1] flex flex-col">
-      <AuthHero subtitle={mode === "signin" ? "Welcome back" : "Join our community"} />
+      <AuthHero
+        subtitle={mode === "signin" ? "Welcome back" : "Join our community"}
+      />
 
       <div className="flex-1 px-6 pt-6 pb-8 flex flex-col gap-4">
         <AuthTabs mode={mode} onChange={setMode} />
 
         {mode === "signin" ? (
           <form className="flex flex-col gap-4">
-            <FormField icon={Mail} type="email" placeholder="Email address" required />
-            <FormField icon={Lock} type="password" placeholder="Password" required />
+            <FormField
+              icon={Mail}
+              type="email"
+              placeholder="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+
+            <FormField
+              icon={Lock}
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
 
             <button
               type="submit"
@@ -29,17 +50,43 @@ export default function LoginPage() {
               Sign In
             </button>
 
-            <button type="button" className="text-sm text-[#2F4A3D] font-medium text-center">
+            <button
+              type="button"
+              className="text-sm text-[#2F4A3D] font-medium text-center"
+            >
               Forgot password?
             </button>
           </form>
         ) : (
           <form className="flex flex-col gap-4">
-            <FormField icon={User} type="text" placeholder="Full name" required />
-            <FormField icon={Mail} type="email" placeholder="Email address" required />
+            <FormField
+              icon={User}
+              type="text"
+              placeholder="Full name"
+              required
+            />
+
+            <FormField
+              icon={Mail}
+              type="email"
+              placeholder="Email address"
+              required
+            />
+
             {/* Placeholder input for now — swap for a real <select> fed by your Culture/Tribe API */}
-            <FormField icon={Users} type="text" placeholder="Select your tribe / culture" required />
-            <FormField icon={Lock} type="password" placeholder="Password" required />
+            <FormField
+              icon={Users}
+              type="text"
+              placeholder="Select your tribe / culture"
+              required
+            />
+
+            <FormField
+              icon={Lock}
+              type="password"
+              placeholder="Password"
+              required
+            />
 
             <button
               type="submit"
@@ -63,3 +110,4 @@ export default function LoginPage() {
     </div>
   );
 }
+```
