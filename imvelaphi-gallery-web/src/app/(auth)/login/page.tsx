@@ -14,6 +14,8 @@ const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const [fullName, setFullName] = useState("");
 const [tribe, setTribe] = useState("");
+
+
 const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
@@ -49,6 +51,10 @@ const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         role: data.user.role,
       })
     );
+
+    // const currentUser = await getCurrentUser();
+
+    // console.log("CURRENT USER:", currentUser);
 
     window.location.href = "/";
   } catch (error) {
