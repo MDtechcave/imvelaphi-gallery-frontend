@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand */
+  --color-forest: #2F5D50;
+  --color-forest-mid: #3D7A67;
+  --color-clay: #8A5A44;
+  --color-sand: #F4E8D0;
+  --color-sun: #D6A63C;
+  --color-sun-light: #F5E9C4;
+  --color-ocean: #3B82A0;
+
+  /* Surfaces */
+  --color-off-white: #FAF8F4;
+  --color-white: #FFFFFF;
+  --color-canvas: #E8DDD0;
+  --color-surface-b: #EEF6F2;
+
+  /* Text */
+  --color-ink: #1C1917;
+  --color-ink-mid: #44403C;
+  --color-muted: #78716C;
+  --color-muted-light: #A8A29E;
+
+  /* Other */
+  --color-border: #EDE5D8;
+  --color-red: #C0392B;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-forest: var(--color-forest);
+  --color-forest-mid: var(--color-forest-mid);
+  --color-clay: var(--color-clay);
+  --color-sand: var(--color-sand);
+  --color-sun: var(--color-sun);
+  --color-sun-light: var(--color-sun-light);
+  --color-ocean: var(--color-ocean);
+
+  --color-off-white: var(--color-off-white);
+  --color-canvas: var(--color-canvas);
+  --color-surface-b: var(--color-surface-b);
+
+  --color-ink: var(--color-ink);
+  --color-ink-mid: var(--color-ink-mid);
+  --color-muted: var(--color-muted);
+  --color-muted-light: var(--color-muted-light);
+
+  --color-border: var(--color-border);
+  --color-red: var(--color-red);
+
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body), sans-serif;
 }
